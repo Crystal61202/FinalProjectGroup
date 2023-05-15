@@ -15,7 +15,7 @@ public class HelloApplication extends Application {
         stage.setTitle("Hello!");
         stage.setScene(scene);
         stage.show();
-        // Testing Khang JAVA Hello Worldd Khang Minh Truong Tran Minh Truong 12345
+        // Testing Khang JAVA Hello Worldd Khang Minh Truong Tran Minh Truong 1234567
     }
 
     public static void main(String[] args) {

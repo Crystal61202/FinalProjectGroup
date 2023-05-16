@@ -4,19 +4,22 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Arrays;
 
-public abstract class Item {
+public abstract class Item implements java.io.Serializable {
     private int numberOfCopies;
     private double rentalFee;
     private String ID, title, rentType, loanType, rentalStatus;
+    private static int trackingId = 0;
+    private int year;
 
-    public Item(String ID, String title, String rentType, String loanType, Integer numberOfCopies, double rentalFee, String rentalStatus){
-        this.ID = ID;
+    public Item(Integer year, String title, String rentType, String loanType, Integer numberOfCopies, double rentalFee, String rentalStatus){
+        this.year = year;
         this.title = title;
-        this.rentType = rentType;
+        setRentType(rentType);
         this.loanType = loanType;
         this.numberOfCopies = numberOfCopies;
         this.rentalFee = rentalFee;
         this.rentalStatus = rentalStatus;
+        setID();
     }
 
     public double getRentalFee() {
@@ -47,8 +50,21 @@ public abstract class Item {
         return title;
     }
 
-    public void setID(String ID) {
-        this.ID = ID;
+    public int getYear() {
+        return year;
+    }
+
+    public static int getTrackingId() {
+        return trackingId;
+    }
+
+    private void setID(){
+        this.ID = formatID();
+    }
+
+    private String formatID(){
+        trackingId++;
+        return String.format("I"+"%03d"+"-"+getYear(),getTrackingId());
     }
 
     public void setLoanType(String loanType) {
@@ -63,25 +79,32 @@ public abstract class Item {
         this.rentalFee = rentalFee;
     }
 
+    public void setYear(int year) {
+        this.year = year;
+    }
+
     public void setRentalStatus(String rentalStatus) {
         this.rentalStatus = rentalStatus;
     }
 
     public void setRentType(String rentType) {
-        this.rentType = rentType;
+        String[] availableRentType = {"DVD", "Game", "Record"};
+        if (Arrays.asList(availableRentType).contains(rentType)) {
+            this.rentType = rentType;
+        } else{
+            throw new IllegalArgumentException("rent type is not valid, 3 available rent type are DVD, VideoGame, OldMovieRecord");
+        }
     }
 
     public void setTitle(String title) {
         this.title = title;
     }
 
-
-
 }
 
 class VideoGame extends Item {
-    public VideoGame(String ID, String title, String rentType, String loanType, Integer numberOfCopies, double rentalFee, String rentalStatus) {
-        super(ID, title, rentType, loanType, numberOfCopies, rentalFee, rentalStatus);
+    public VideoGame(Integer year, String title, String rentType, String loanType, Integer numberOfCopies, double rentalFee, String rentalStatus) {
+        super(year, title, rentType, loanType, numberOfCopies, rentalFee, rentalStatus);
     }
     @Override
     public String toString() {
@@ -97,14 +120,9 @@ class DVD extends Item{
 
 
     private String genre;
-    public DVD(String ID, String title, String rentType, String loanType, Integer numberOfCopies, double rentalFee, String rentalStatus, String genre) {
-        super(ID, title, rentType, loanType, numberOfCopies, rentalFee, rentalStatus);
-        String[] availableGenre = {"Action", "Horror", "Drama", "Comedy"};
-        if (Arrays.asList(availableGenre).contains(genre)) {
-            this.genre = genre;
-        } else{
-            System.out.println("the Genre is not available");
-        }
+    public DVD(Integer year, String title, String rentType, String loanType, Integer numberOfCopies, double rentalFee, String rentalStatus, String genre) {
+        super(year, title, rentType, loanType, numberOfCopies, rentalFee, rentalStatus);
+        setGenre(genre);
     }
 
     public String getGenre() {
@@ -112,7 +130,12 @@ class DVD extends Item{
     }
 
     public void setGenre(String genre) {
-        this.genre = genre;
+        String[] availableGenre = {"Action", "Horror", "Drama", "Comedy"};
+        if (Arrays.asList(availableGenre).contains(genre)) {
+            this.genre = genre;
+        } else{
+            throw new IllegalArgumentException("Genre is not valid, 4 available genres are Action, Horror, Drama, Comedy ");
+        }
     }
 
     @Override
@@ -125,14 +148,9 @@ class DVD extends Item{
 class OldMovieRecord extends Item {
     private String genre;
 
-    public OldMovieRecord(String ID, String title, String rentType, String loanType, Integer numberOfCopies, double rentalFee, String rentalStatus, String genre) {
-        super(ID, title, rentType, loanType, numberOfCopies, rentalFee, rentalStatus);
-        String[] availableGenre = {"Action", "Horror", "Drama", "Comedy"};
-        if (Arrays.asList(availableGenre).contains(genre)) {
-            this.genre = genre;
-        } else{
-            System.out.println("the Genre is not available");
-        }
+    public OldMovieRecord(Integer year, String title, String rentType, String loanType, Integer numberOfCopies, double rentalFee, String rentalStatus, String genre) {
+        super(year, title, rentType, loanType, numberOfCopies, rentalFee, rentalStatus);
+        setGenre(genre);
     }
 
     public String getGenre() {
@@ -140,7 +158,12 @@ class OldMovieRecord extends Item {
     }
 
     public void setGenre(String genre) {
-        this.genre = genre;
+        String[] availableGenre = {"Action", "Horror", "Drama", "Comedy"};
+        if (Arrays.asList(availableGenre).contains(genre)) {
+            this.genre = genre;
+        } else{
+            throw new IllegalArgumentException("Genre is not valid, 4 available genres are Action, Horror, Drama, Comedy ");
+        }
     }
 
     @Override

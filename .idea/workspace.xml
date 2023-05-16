@@ -4,15 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f1ebabd-5a29-4220-8f81-de52fd9f7ffe" name="Changes" comment="Update HelloApplication.java">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/Item.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/ItemDatabase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_15_23__10_58_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_15_23__10_58_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_15_23__10_59_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_15_23__10_59_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_15_23__11_01_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_15_23__11_01_PM__Changes_.xml" afterDir="false" />
+    <list default="true" id="0f1ebabd-5a29-4220-8f81-de52fd9f7ffe" name="Changes" comment="Making class Item">
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/data/item.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/data/item.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +69,7 @@
       <workItem from="1684162293733" duration="436000" />
       <workItem from="1684165955932" duration="1115000" />
       <workItem from="1684210052974" duration="6830000" />
-      <workItem from="1684218240249" duration="3508000" />
+      <workItem from="1684218240249" duration="14545000" />
     </task>
     <task id="LOCAL-00001" summary="Update HelloApplication.java">
       <created>1684166380718</created>
@@ -116,7 +113,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684166926559</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Making class Item">
+      <created>1684223396152</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1684223396152</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,6 +170,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Update HelloApplication.java Khang" />
     <MESSAGE value="Update HelloApplication.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update HelloApplication.java" />
+    <MESSAGE value="Making class Item" />
+    <option name="LAST_COMMIT_MESSAGE" value="Making class Item" />
   </component>
 </project>

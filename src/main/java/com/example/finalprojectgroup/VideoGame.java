@@ -2,6 +2,10 @@ package com.example.finalprojectgroup;
 
 public class VideoGame extends Item implements java.io.Serializable {
     String genre = "";
+
+    public VideoGame(){
+
+    }
     public VideoGame(Integer year, String title, String rentType, String loanType, Integer numberOfCopies, double rentalFee) {
         super(year, title, rentType, loanType, numberOfCopies, rentalFee);
     }

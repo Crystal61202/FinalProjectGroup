@@ -6,7 +6,7 @@ public abstract class Item implements java.io.Serializable {
     private int numberOfCopies;
     private double rentalFee;
     private String ID, title, rentType, loanType, rentalStatus;
-    private static int trackingId = 0;
+    private static int trackingId = ItemDatabase.getRecord("src/main/resources/com/example/data/item.txt").size();
     private int year;
 
     public Item(Integer year, String title, String rentType, String loanType, Integer numberOfCopies, double rentalFee){
@@ -18,6 +18,10 @@ public abstract class Item implements java.io.Serializable {
         this.rentalFee = rentalFee;
         setRentalStatus();
         setID();
+    }
+
+    public Item() {
+
     }
 
     public double getRentalFee() {
@@ -56,12 +60,12 @@ public abstract class Item implements java.io.Serializable {
         return trackingId;
     }
 
-    private void setID(){
+    public void setID(){
         this.ID = formatID();
     }
 
     private String formatID(){
-        trackingId++;
+        trackingId = ItemDatabase.getRecord("src/main/resources/com/example/data/item.txt").size()+1;
         return String.format("I"+"%03d"+"-"+getYear(),trackingId);
     }
 
@@ -91,7 +95,7 @@ public abstract class Item implements java.io.Serializable {
     }
 
     public void setRentType(String rentType) {
-        String[] availableRentType = {"DVD", "Game", "Record"};
+        String[] availableRentType = {"DVD", "VideoGame", "OldMovieRecord"};
         if (Arrays.asList(availableRentType).contains(rentType)) {
             this.rentType = rentType;
         } else{

@@ -2,20 +2,48 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="503.0" prefWidth="834.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalprojectgroup.Controller">
+<AnchorPane prefHeight="501.0" prefWidth="947.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalprojectgroup.Controller">
    <children>
-      <TableView fx:id="table" layoutX="8.0" layoutY="6.0" prefHeight="273.0" prefWidth="605.0">
+      <TableView fx:id="table" layoutX="8.0" layoutY="42.0" prefHeight="277.0" prefWidth="609.0">
         <columns>
           <TableColumn fx:id="idColumn" prefWidth="61.33331298828125" text="ID" />
-          <TableColumn fx:id="titleColumn" prefWidth="56.666656494140625" text="title" />
-            <TableColumn fx:id="rentalTypeColumn" prefWidth="86.00000762939453" text="rental type" />
-            <TableColumn fx:id="loanTypeColumn" prefWidth="79.33335876464844" text="loan type" />
-            <TableColumn fx:id="numberOfCopiesColumn" prefWidth="95.33331298828125" text="No. of copies" />
-            <TableColumn fx:id="rentalFeeColumn" prefWidth="75.0" text="rental fee" />
+          <TableColumn fx:id="titleColumn" prefWidth="115.00000762939453" text="title" />
+            <TableColumn fx:id="rentalTypeColumn" prefWidth="76.33332824707031" text="rental type" />
+            <TableColumn fx:id="loanTypeColumn" prefWidth="75.66665649414062" text="loan type" />
+            <TableColumn fx:id="numberOfCopiesColumn" prefWidth="48.33331298828125" text="copies" />
+            <TableColumn fx:id="rentalFeeColumn" prefWidth="81.3333740234375" text="rental fee" />
             <TableColumn fx:id="rentalStatusColumn" prefWidth="75.0" text="status" />
             <TableColumn fx:id="genreColumn" prefWidth="75.0" text="Genre" />
         </columns>
       </TableView>
+      <Label layoutX="658.0" layoutY="47.0" text="year" />
+      <Label layoutX="658.0" layoutY="87.0" text="title" />
+      <Label layoutX="658.0" layoutY="124.0" text="rental type" />
+      <Label layoutX="658.0" layoutY="158.0" text="loan type" />
+      <Label layoutX="658.0" layoutY="193.0" text="copies" />
+      <Label layoutX="658.0" layoutY="232.0" text="fee" />
+      <Label layoutX="653.0" layoutY="273.0" text="Genre" />
+      <TextField fx:id="titleText" layoutX="722.0" layoutY="83.0" />
+      <TextField fx:id="copiesText" layoutX="722.0" layoutY="189.0" />
+      <TextField fx:id="feeText" layoutX="722.0" layoutY="228.0" />
+      <ChoiceBox fx:id="genreBox" layoutX="722.0" layoutY="269.0" prefWidth="150.0" />
+      <ProgressBar fx:id="progressBar1" layoutX="8.0" layoutY="478.0" prefWidth="200.0" progress="0.5" />
+      <ChoiceBox fx:id="rentalTypeBox" layoutX="722.0" layoutY="120.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="loanTypeBox" layoutX="722.0" layoutY="154.0" prefWidth="150.0" />
+      <Button fx:id="addButton" layoutX="662.0" layoutY="310.0" mnemonicParsing="false" onAction="#add" text="ADD" />
+      <Button fx:id="removeButton" layoutX="722.0" layoutY="310.0" mnemonicParsing="false" onAction="#delete" text="REMOVE" />
+      <TextField fx:id="yearText" layoutX="722.0" layoutY="43.0" />
+      <Label alignment="CENTER" layoutX="11.0" layoutY="22.0" prefHeight="17.0" prefWidth="603.0" text="Item Available in the store">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="650.0" layoutY="14.0" prefHeight="17.0" prefWidth="242.0" text="Write Item Information here">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

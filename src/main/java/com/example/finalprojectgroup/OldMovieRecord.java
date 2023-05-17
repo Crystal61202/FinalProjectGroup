@@ -5,6 +5,9 @@ import java.util.Arrays;
 public class OldMovieRecord extends Item implements java.io.Serializable {
     private String genre;
 
+    public OldMovieRecord(){
+    }
+
     public OldMovieRecord(Integer year, String title, String rentType, String loanType, Integer numberOfCopies, double rentalFee, String genre) {
         super(year, title, rentType, loanType, numberOfCopies, rentalFee);
         setGenre(genre);

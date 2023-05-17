@@ -3,9 +3,10 @@ package com.example.finalprojectgroup;
 import java.util.Arrays;
 
 public class DVD extends Item implements java.io.Serializable {
-
-
     private String genre;
+
+    public DVD(){
+    }
 
     public DVD(Integer year, String title, String rentType, String loanType, Integer numberOfCopies, double rentalFee, String genre) {
         super(year, title, rentType, loanType, numberOfCopies, rentalFee);

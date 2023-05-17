@@ -4,18 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f1ebabd-5a29-4220-8f81-de52fd9f7ffe" name="Changes" comment="...">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/DVD.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/OldMovieRecord.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/RentalApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/VideoGame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/finalprojectgroup/sample.fxml" afterDir="false" />
+    <list default="true" id="0f1ebabd-5a29-4220-8f81-de52fd9f7ffe" name="Changes" comment="có thể tạo bảng cho item từ file item.txt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/HelloApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/HelloController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/DVD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/DVD.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/OldMovieRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/OldMovieRecord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/RentalApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/RentalApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/VideoGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/VideoGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/data/item.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/data/item.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/finalprojectgroup/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/finalprojectgroup/sample.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +93,7 @@
       <workItem from="1684165955932" duration="1115000" />
       <workItem from="1684210052974" duration="6830000" />
       <workItem from="1684218240249" duration="14545000" />
-      <workItem from="1684291713971" duration="22191000" />
+      <workItem from="1684291713971" duration="38153000" />
     </task>
     <task id="LOCAL-00001" summary="Update HelloApplication.java">
       <created>1684166380718</created>
@@ -160,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684306872535</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="có thể tạo bảng cho item từ file item.txt">
+      <created>1684318085157</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1684318085157</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,6 +218,7 @@
     <MESSAGE value="Making class Item" />
     <MESSAGE value="thêm tính năng addrecord và getRecord từ file ra" />
     <MESSAGE value="..." />
-    <option name="LAST_COMMIT_MESSAGE" value="..." />
+    <MESSAGE value="có thể tạo bảng cho item từ file item.txt" />
+    <option name="LAST_COMMIT_MESSAGE" value="có thể tạo bảng cho item từ file item.txt" />
   </component>
 </project>

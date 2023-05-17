@@ -1,3 +1,5 @@
+package com.example.finalprojectgroup;
+
 import java.util.ArrayList;
 
 public abstract class Customer {

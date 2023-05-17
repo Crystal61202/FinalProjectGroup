@@ -1,7 +1,5 @@
 package com.example.finalprojectgroup;
 
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.Arrays;
 
 public abstract class Item implements java.io.Serializable {
@@ -11,14 +9,14 @@ public abstract class Item implements java.io.Serializable {
     private static int trackingId = 0;
     private int year;
 
-    public Item(Integer year, String title, String rentType, String loanType, Integer numberOfCopies, double rentalFee, String rentalStatus){
+    public Item(Integer year, String title, String rentType, String loanType, Integer numberOfCopies, double rentalFee){
         this.year = year;
         this.title = title;
         setRentType(rentType);
         this.loanType = loanType;
         this.numberOfCopies = numberOfCopies;
         this.rentalFee = rentalFee;
-        this.rentalStatus = rentalStatus;
+        setRentalStatus();
         setID();
     }
 
@@ -73,6 +71,7 @@ public abstract class Item implements java.io.Serializable {
 
     public void setNumberOfCopies(int numberOfCopies) {
         this.numberOfCopies = numberOfCopies;
+        setRentalStatus();
     }
 
     public void setRentalFee(double rentalFee) {
@@ -83,8 +82,12 @@ public abstract class Item implements java.io.Serializable {
         this.year = year;
     }
 
-    public void setRentalStatus(String rentalStatus) {
-        this.rentalStatus = rentalStatus;
+    public void setRentalStatus() {
+        if(getNumberOfCopies() <= 0){
+            this.rentalStatus = "borrowed";
+        } else {
+            this.rentalStatus = "available";
+        }
     }
 
     public void setRentType(String rentType) {
@@ -102,9 +105,9 @@ public abstract class Item implements java.io.Serializable {
 
 }
 
-class VideoGame extends Item {
-    public VideoGame(Integer year, String title, String rentType, String loanType, Integer numberOfCopies, double rentalFee, String rentalStatus) {
-        super(year, title, rentType, loanType, numberOfCopies, rentalFee, rentalStatus);
+class VideoGame extends Item implements java.io.Serializable {
+    public VideoGame(Integer year, String title, String rentType, String loanType, Integer numberOfCopies, double rentalFee) {
+        super(year, title, rentType, loanType, numberOfCopies, rentalFee);
     }
     @Override
     public String toString() {
@@ -116,12 +119,12 @@ class VideoGame extends Item {
 
 }
 
-class DVD extends Item{
+class DVD extends Item implements java.io.Serializable {
 
 
     private String genre;
-    public DVD(Integer year, String title, String rentType, String loanType, Integer numberOfCopies, double rentalFee, String rentalStatus, String genre) {
-        super(year, title, rentType, loanType, numberOfCopies, rentalFee, rentalStatus);
+    public DVD(Integer year, String title, String rentType, String loanType, Integer numberOfCopies, double rentalFee, String genre) {
+        super(year, title, rentType, loanType, numberOfCopies, rentalFee);
         setGenre(genre);
     }
 
@@ -145,11 +148,11 @@ class DVD extends Item{
     }
 }
 
-class OldMovieRecord extends Item {
+class OldMovieRecord extends Item implements java.io.Serializable {
     private String genre;
 
-    public OldMovieRecord(Integer year, String title, String rentType, String loanType, Integer numberOfCopies, double rentalFee, String rentalStatus, String genre) {
-        super(year, title, rentType, loanType, numberOfCopies, rentalFee, rentalStatus);
+    public OldMovieRecord(Integer year, String title, String rentType, String loanType, Integer numberOfCopies, double rentalFee, String genre) {
+        super(year, title, rentType, loanType, numberOfCopies, rentalFee);
         setGenre(genre);
     }
 

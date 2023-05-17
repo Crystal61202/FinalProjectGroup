@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="503.0" prefWidth="834.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalprojectgroup.Controller">
+   <children>
+      <TableView fx:id="table" layoutX="8.0" layoutY="6.0" prefHeight="273.0" prefWidth="605.0">
+        <columns>
+          <TableColumn fx:id="idColumn" prefWidth="61.33331298828125" text="ID" />
+          <TableColumn fx:id="titleColumn" prefWidth="56.666656494140625" text="title" />
+            <TableColumn fx:id="rentalTypeColumn" prefWidth="86.00000762939453" text="rental type" />
+            <TableColumn fx:id="loanTypeColumn" prefWidth="79.33335876464844" text="loan type" />
+            <TableColumn fx:id="numberOfCopiesColumn" prefWidth="95.33331298828125" text="No. of copies" />
+            <TableColumn fx:id="rentalFeeColumn" prefWidth="75.0" text="rental fee" />
+            <TableColumn fx:id="rentalStatusColumn" prefWidth="75.0" text="status" />
+            <TableColumn fx:id="genreColumn" prefWidth="75.0" text="Genre" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

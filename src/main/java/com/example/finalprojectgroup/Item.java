@@ -62,7 +62,7 @@ public abstract class Item implements java.io.Serializable {
 
     private String formatID(){
         trackingId++;
-        return String.format("I"+"%03d"+"-"+getYear(),getTrackingId());
+        return String.format("I"+"%03d"+"-"+getYear(),trackingId);
     }
 
     public void setLoanType(String loanType) {
@@ -105,73 +105,3 @@ public abstract class Item implements java.io.Serializable {
 
 }
 
-class VideoGame extends Item implements java.io.Serializable {
-    public VideoGame(Integer year, String title, String rentType, String loanType, Integer numberOfCopies, double rentalFee) {
-        super(year, title, rentType, loanType, numberOfCopies, rentalFee);
-    }
-    @Override
-    public String toString() {
-        return String.format("%s,%s,%s,%s,%d,%.2f,%s",
-                getID(), getTitle(), getRentType(), getLoanType(), getNumberOfCopies(), getRentalFee(), getRentalStatus());
-    }
-
-
-
-}
-
-class DVD extends Item implements java.io.Serializable {
-
-
-    private String genre;
-    public DVD(Integer year, String title, String rentType, String loanType, Integer numberOfCopies, double rentalFee, String genre) {
-        super(year, title, rentType, loanType, numberOfCopies, rentalFee);
-        setGenre(genre);
-    }
-
-    public String getGenre() {
-        return genre;
-    }
-
-    public void setGenre(String genre) {
-        String[] availableGenre = {"Action", "Horror", "Drama", "Comedy"};
-        if (Arrays.asList(availableGenre).contains(genre)) {
-            this.genre = genre;
-        } else{
-            throw new IllegalArgumentException("Genre is not valid, 4 available genres are Action, Horror, Drama, Comedy ");
-        }
-    }
-
-    @Override
-    public String toString() {
-        return String.format("%s,%s,%s,%s,%d,%.2f,%s,%s",
-                getID(), getTitle(), getRentType(), getLoanType(), getNumberOfCopies(), getRentalFee(), getRentalStatus(), getGenre() );
-    }
-}
-
-class OldMovieRecord extends Item implements java.io.Serializable {
-    private String genre;
-
-    public OldMovieRecord(Integer year, String title, String rentType, String loanType, Integer numberOfCopies, double rentalFee, String genre) {
-        super(year, title, rentType, loanType, numberOfCopies, rentalFee);
-        setGenre(genre);
-    }
-
-    public String getGenre() {
-        return genre;
-    }
-
-    public void setGenre(String genre) {
-        String[] availableGenre = {"Action", "Horror", "Drama", "Comedy"};
-        if (Arrays.asList(availableGenre).contains(genre)) {
-            this.genre = genre;
-        } else{
-            throw new IllegalArgumentException("Genre is not valid, 4 available genres are Action, Horror, Drama, Comedy ");
-        }
-    }
-
-    @Override
-    public String toString() {
-        return String.format("%s,%s,%s,%s,%d,%.2f,%s,%s",
-                getID(), getTitle(), getRentType(), getLoanType(), getNumberOfCopies(), getRentalFee(), getRentalStatus(), getGenre() );
-    }
-}

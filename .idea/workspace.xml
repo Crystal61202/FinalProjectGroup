@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f1ebabd-5a29-4220-8f81-de52fd9f7ffe" name="Changes" comment="- Id được cấu thành từ I xxx - year. vậy nên t yêu cầu nhập year vô thôi rồi formatID sau. h sẽ thêm biến trackingID = 0, cứ mỗi lần có item mới thì XXX sẽ cộng thêm 1, trong constructor sẽ gọi method getID để gán giá trị cho ID. &#10;- rentType thì có thêm điều kiện kiểu như là cửa hàng mình chỉ kinh doanh có 3 mặt hàng thôi á nên chỉ có 3 món thôi, mà cái này trên GUI có cái selection nên chắc ko lộn đc.&#10; - DVD với Movie thì t có thêm điều kiện cho Genre, mà trên GUI cũng có phần selection nên t thêm cho có thôi. &#10; - Mỗi cái class có cái toString() để ghi vô file, tạm thời là ghi vô đc rồi mà t chưa biết lấy ra xài sao. Kiểu sao từ cái file đó mà mình in ra đc table á kiểu v.">
+    <list default="true" id="0f1ebabd-5a29-4220-8f81-de52fd9f7ffe" name="Changes" comment="thêm tính năng addrecord và getRecord từ file ra">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/ItemDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/ItemDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/data/item.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +79,7 @@
       <workItem from="1684165955932" duration="1115000" />
       <workItem from="1684210052974" duration="6830000" />
       <workItem from="1684218240249" duration="14545000" />
-      <workItem from="1684291713971" duration="10196000" />
+      <workItem from="1684291713971" duration="10982000" />
     </task>
     <task id="LOCAL-00001" summary="Update HelloApplication.java">
       <created>1684166380718</created>
@@ -135,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684223396152</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="thêm tính năng addrecord và getRecord từ file ra">
+      <created>1684306239497</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1684306239497</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -186,6 +188,7 @@
     <MESSAGE value="Update HelloApplication.java Khang" />
     <MESSAGE value="Update HelloApplication.java" />
     <MESSAGE value="Making class Item" />
-    <option name="LAST_COMMIT_MESSAGE" value="Making class Item" />
+    <MESSAGE value="thêm tính năng addrecord và getRecord từ file ra" />
+    <option name="LAST_COMMIT_MESSAGE" value="thêm tính năng addrecord và getRecord từ file ra" />
   </component>
 </project>

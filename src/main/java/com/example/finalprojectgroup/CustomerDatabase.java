@@ -7,7 +7,7 @@ import java.util.Set;
 
 public class CustomerDatabase {
 
-    public static void addRecord(ConcreteCustomer filePath, int rental) {
+    public static void addRecord(String filePath, Rental rental) {
         ArrayList<Rental> existingRecords = getRecord(filePath); // Load existing records
 
         // Add the new record to the existing records
@@ -54,7 +54,7 @@ public class CustomerDatabase {
         return list;
     }
 
-    public static void removeRecord(Customer filePath, int itemID) {
+    public static void removeRecord(String filePath, Rental itemID) {
         ArrayList<Rental> existingRecords = getRecord(filePath); // Load existing records
 
         // Find the record with the specified ID

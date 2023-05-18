@@ -10,8 +10,6 @@ public class VIPAccount extends Customer implements Serializable {
         super(ID, name, address, phone, username, password);
         this.rewardPoints = 0;
     }
-
-    @Override
     public void addRewardPoints(int points) {
         this.rewardPoints += points;
         if (this.rewardPoints >= 100) {

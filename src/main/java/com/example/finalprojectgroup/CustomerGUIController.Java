@@ -9,13 +9,9 @@ public class CustomerGUIController {
 
     private CustomerDatabase database;
 
-    public CustomerGUIController() {
-        database = new CustomerDatabase();
-    }
-
     public void addCustomer() {
         // Create a new customer object.
-        Customer customer = new Customer();
+        ConcreteCustomer customer = new ConcreteCustomer(ID, name, address, phone, username, password);
 
         // Prompt the user to enter the customer's information.
         System.out.println("Enter the customer's ID: ");
@@ -70,5 +66,9 @@ public class CustomerGUIController {
             // Display a message indicating that the customer was not found.
             System.out.println("Customer not found.");
         }
+    }
+
+    public void setDatabase(CustomerDatabase database) {
+        this.database = database;
     }
 }

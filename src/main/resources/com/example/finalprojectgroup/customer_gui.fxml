@@ -1,42 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" alignment="CENTER" spacing="10.0" style="-fx-background-color: #ffffff;">
-   <children>
-      <Label text="Customer Login" style="-fx-font-size: 24.0; -fx-font-family: sans-serif; -fx-text-fill: #000000;">
-         <font>
-            <Font size="24.0" name="SansSerif"/>
-         </font>
-      </Label>
-      <TextField fx:id="usernameTextField" promptText="Username" style="-fx-font-size: 16.0; -fx-font-family: sans-serif; -fx-text-fill: #000000; -fx-background-color: #ffffff;">
-         <font>
-            <Font size="16.0" name="SansSerif"/>
-         </font>
-      </TextField>
-      <PasswordField fx:id="passwordField" promptText="Password" style="-fx-font-size: 16.0; -fx-font-family: sans-serif; -fx-text-fill: #000000; -fx-background-color: #ffffff;">
-         <font>
-            <Font size="16.0" name="SansSerif"/>
-         </font>
-      </PasswordField>
-      <Button text="Login" style="-fx-font-size: 16.0; -fx-font-family: sans-serif; -fx-text-fill: #000000; -fx-background-color: #ffffff; -fx-background-radius: 10.0;">
-         <font>
-            <Font size="16.0" name="SansSerif"/>
-         </font>
-      </Button>
-      <Button text="Add Customer" style="-fx-font-size: 16.0; -fx-font-family: sans-serif; -fx-text-fill: #000000; -fx-background-color: #ffffff; -fx-background-radius: 10.0;">
-         <font>
-            <Font size="16.0" name="SansSerif"/>
-         </font>
-      </Button>
-      <Button text="Remove Customer" style="-fx-font-size: 16.0; -fx-font-family: sans-serif; -fx-text-fill: #000000; -fx-background-color: #ffffff; -fx-background-radius: 10.0;">
-         <font>
-            <Font size="16.0" name="SansSerif"/>
-         </font>
-      </Button>
-   </children>
+<VBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2"
+    fx:controller="CustomerGUI">
+
+    <TableView fx:id="customerTable">
+        <columns>
+            <TableColumn text="ID" />
+            <TableColumn text="Name" />
+            <TableColumn text="Address" />
+            <TableColumn text="Phone" />
+        </columns>
+    </TableView>
+
+    <Button text="Add Customer" onAction="#addCustomer" />
+    <Button text="Remove Customer" onAction="#removeCustomer" />
+    <CheckBox text="Allow Admin to Create or Adjust Customers" />
+
 </VBox>

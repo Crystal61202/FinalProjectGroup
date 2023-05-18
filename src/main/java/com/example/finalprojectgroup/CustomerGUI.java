@@ -15,12 +15,46 @@ public class CustomerGUI extends Application {
         Scene scene = new Scene(loader.load());
         stage.setScene(scene);
         stage.show();
-
-        CustomerGUIController controller = loader.getController();
-        controller.setDatabase(new CustomerDatabase());
     }
 
     public static void main(String[] args) {
         launch(args);
+    }
+
+    private void addCustomer(ActionEvent event) {
+        Customer customer = new Customer();
+        customer.setId("123456789");
+        customer.setName("John Doe");
+        customer.setAddress("123 Main Street");
+        customer.setPhone("123-456-7890");
+
+        if (allowAdminToCreateOrAdjustCustomers()) {
+            customerList.add(customer);
+            customerTable.refresh();
+        }
+    }
+
+    private void removeCustomer(ActionEvent event) {
+        // Get the customer ID from the user.
+        String id = JOptionPane.showInputDialog("Enter the customer ID to remove:");
+
+        // Remove the customer from the customer list.
+        for (Customer customer : customerList) {
+            if (customer.getId().equals(id)) {
+                customerList.remove(customer);
+                break;
+            }
+        }
+
+        // Update the TableView to remove the customer data.
+        customerTable.refresh();
+    }
+
+    private boolean allowAdminToCreateOrAdjustCustomers() {
+        // Get the value of the CheckBox object.
+        CheckBox allowAdminToCreateOrAdjustCustomersCheckBox = (CheckBox)
+            FXMLLoader.load(getClass().getResource("CustomerGUI.fxml")).lookup("#allowAdminToCreateOrAdjustCustomers");
+
+        return allowAdminToCreateOrAdjustCustomersCheckBox.isSelected();
     }
 }

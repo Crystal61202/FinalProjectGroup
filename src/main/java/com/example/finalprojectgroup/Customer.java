@@ -3,13 +3,14 @@ package com.example.finalprojectgroup;
 import java.util.ArrayList;
 
 public abstract class Customer {
-    private String ID;
+    protected static String ID;
     private String name;
     private String address;
     private String phone;
     private ArrayList<Rental> rentals;
     private String username;
     private String password;
+    private List<Customer> customers;
 
     public Customer(String ID, String name, String address, String phone, String username, String password) {
         if (!isValidID(ID)) {
@@ -22,6 +23,7 @@ public abstract class Customer {
         this.rentals = new ArrayList<>();
         this.username = username;
         this.password = password;
+        customers = new ArrayList<>();
     }
 
     public String getID() {

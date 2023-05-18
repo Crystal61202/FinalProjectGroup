@@ -11,9 +11,10 @@ public class CustomerGUIController {
 
     public void addCustomer() {
         // Create a new customer object.
-        ConcreteCustomer customer = new ConcreteCustomer(ID, name, address, phone, username, password);
+
 
         // Prompt the user to enter the customer's information.
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the customer's ID: ");
         String ID = scanner.nextLine();
         System.out.println("Enter the customer's name: ");
@@ -27,6 +28,9 @@ public class CustomerGUIController {
         System.out.println("Enter the customer's password: ");
         String password = scanner.nextLine();
 
+        ConcreteCustomer customer = new ConcreteCustomer(ID, name, address, phone, username, password);
+
+
         // Set the customer's information.
         customer.setID(ID);
         customer.setName(name);
@@ -36,13 +40,14 @@ public class CustomerGUIController {
         customer.setPassword(password);
 
         // Add the customer to the database.
-        database.addRecord(customer);
+        database.addRecord(customer, 0);
 
         // Display a message confirming that the customer was added.
         System.out.println("Customer added successfully.");
     }
 
     public void removeCustomer() {
+        Scanner scanner = new Scanner(System.in);
         // Prompt the user to enter the ID of the customer to remove.
         System.out.println("Enter the ID of the customer to remove: ");
         String ID = scanner.nextLine();
@@ -58,7 +63,7 @@ public class CustomerGUIController {
 
         // If the customer was found, remove it from the database.
         if (customer != null) {
-            database.removeRecord(customer);
+            database.removeRecord(customer, 0);
 
             // Display a message confirming that the customer was removed.
             System.out.println("Customer removed successfully.");

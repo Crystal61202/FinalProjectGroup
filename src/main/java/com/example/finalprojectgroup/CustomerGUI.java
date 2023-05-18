@@ -24,9 +24,11 @@ public class CustomerGUI extends Application {
     private void addCustomer(ActionEvent event) {
         Customer customer = new Customer();
         customer.setId("123456789");
-        customer.setName("John Doe");
-        customer.setAddress("123 Main Street");
+        customer.setName("Minh");
+        customer.setAddress("Phu Nhuan");
         customer.setPhone("123-456-7890");
+        customer.setUsername("Minh1234");
+        customer.setPassword("kddkl;sj");
 
         if (allowAdminToCreateOrAdjustCustomers()) {
             customerList.add(customer);

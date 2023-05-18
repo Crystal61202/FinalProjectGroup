@@ -51,6 +51,15 @@ public abstract class Customer {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+    public void setID(String ID) {
+        this.ID = ID;
+    }
+    public void setPassword(String password){
+        this.password = password;
+    }
+    public void setUsername(String username){
+        this.username = username;
+    }
 
     public ArrayList<Rental> getRentals() {
         return rentals;

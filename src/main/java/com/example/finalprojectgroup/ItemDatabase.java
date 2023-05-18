@@ -20,7 +20,7 @@ public class ItemDatabase {
             for (Item existingItem : existingItems) {
                 out.writeObject(existingItem); // Write all unique items back to the file
             }
-            System.out.println("Record added successfully.");
+
         } catch (IOException e) {
             System.out.println("Error occurred while writing to the database file: " + e.getMessage());
         }
@@ -53,5 +53,17 @@ public class ItemDatabase {
         return list;
     }
 
+    public static void deleteAllItems() {
+        String filePath = "src/main/resources/com/example/data/item.txt";
+        ArrayList<Item> emptyList = new ArrayList<>();
 
+        try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(filePath))) {
+            for (Item obj : emptyList) {
+                out.writeObject(obj);
+            }
+
+        } catch (IOException e) {
+            System.out.println("Error occurred while deleting items from the database file: " + e.getMessage());
+        }
+    }
 }

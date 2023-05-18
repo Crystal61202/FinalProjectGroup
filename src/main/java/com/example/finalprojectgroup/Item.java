@@ -2,13 +2,17 @@ package com.example.finalprojectgroup;
 
 import java.util.Arrays;
 
+//Creating abstract class Item, implements Serializable for saving the whole object in the file
 public abstract class Item implements java.io.Serializable {
+    //Declare Item's field
     private int numberOfCopies;
     private double rentalFee;
     private String ID, title, rentType, loanType, rentalStatus;
     private static int trackingId = ItemDatabase.getRecord("src/main/resources/com/example/data/item.txt").size();
     private int year;
 
+    // Contructor for Item
+    // year to make ID,
     public Item(Integer year, String title, String rentType, String loanType, Integer numberOfCopies, double rentalFee){
         this.year = year;
         this.title = title;
@@ -20,6 +24,7 @@ public abstract class Item implements java.io.Serializable {
         setID();
     }
 
+    //default constructor
     public Item() {
 
     }

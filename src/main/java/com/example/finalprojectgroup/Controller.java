@@ -6,10 +6,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
@@ -60,12 +57,9 @@ public class Controller implements Initializable {
     @FXML
     private TextField feeText;
 
-
-
-
+    ArrayList<Item> list  = ItemDatabase.getRecord("src/main/resources/com/example/data/item.txt");
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        ArrayList<Item> list  = ItemDatabase.getRecord("src/main/resources/com/example/data/item.txt");
         Comparator<Item> idComparator = Comparator.comparing(Item::getID);
         list.sort(idComparator);
         ObservableList<Item> itemList = FXCollections.observableArrayList(list);
@@ -93,9 +87,23 @@ public class Controller implements Initializable {
         // Remove the selected item from the table
         table.getItems().remove(selectedItem);
 
-        // Update the IDs
+        // Update the table view
         table.refresh();
+
+        // Delete the selected item from the database
+        list.remove(selectedItem);
+
+        ItemDatabase.deleteAllItems();
+
+        for(Item i: list){
+            ItemDatabase.addRecord("src/main/resources/com/example/data/item.txt",i);
+        }
     }
+
+    public void clear(ActionEvent e){
+        clearTextFields();
+    }
+
 
     public void add(ActionEvent e) {
         String type = rentalTypeBox.getValue();
@@ -111,7 +119,6 @@ public class Controller implements Initializable {
 
         ItemDatabase.addRecord("src/main/resources/com/example/data/item.txt", newItem);
         updateTable();
-        clearTextFields();
     }
 
     private VideoGame createVideoGame() {

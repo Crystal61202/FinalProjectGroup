@@ -10,7 +10,6 @@ import java.util.ArrayList;
 
 public class RentalApp extends Application {
 
-
     @Override
     public void start(Stage primaryStage) throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("sample.fxml"));

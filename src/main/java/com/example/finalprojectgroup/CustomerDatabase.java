@@ -52,4 +52,4 @@ public static ArrayList<Rental> getRecord(String filePath) {
     }
 
     return list;
-}
+}}

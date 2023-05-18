@@ -45,5 +45,6 @@
             <Font size="15.0" />
          </font>
       </Label>
+      <Button layoutX="797.0" layoutY="310.0" mnemonicParsing="false" onAction="#clear" text="CLEAR" />
    </children>
 </AnchorPane>

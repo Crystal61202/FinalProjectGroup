@@ -80,63 +80,6 @@ public abstract class Customer {
     }
 }
 
-
-class GuestAccount extends Customer {
-    public GuestAccount(String ID, String name, String address, String phone, String username, String password) {
-        super(ID, name, address, phone, username, password);
-    }
-
-    @Override
-    public void addRental(Rental rental) {
-        if (getRentals().size() >= 2 && rental.getDays() == 2) {
-            System.out.println("Error: Guest account can only rent 1-day items.");
-        } else {
-            getRentals().add(rental);
-            if (getRentals().size() > 3) {
-                RegularAccount regularAccount = new RegularAccount(getID(), getName(), getAddress(), getPhone(), getUsername(), getPassword());
-                for (Rental r : getRentals()) {
-                    regularAccount.addRental(r);
-                }
-                // delete the current guest account
-            }
-        }
-    }
-}
-
-class RegularAccount extends Customer {
-    public RegularAccount(String ID, String name, String address, String phone, String username, String password) {
-        super(ID, name, address, phone, username, password);
-    }
-
-    @Override
-    public void addRental(Rental rental) {
-        super.addRental(rental);
-        if (getRentals().size() > 5) {
-            VIPAccount vipAccount = new VIPAccount(getID(), getName(), getAddress(), getPhone(), getUsername(), getPassword());
-            for (Rental r : getRentals()) {
-                vipAccount.addRental(r);
-            }
-            // delete the current regular account
-        }
-    }
-}
-
-class VIPAccount extends Customer {
-    private int rewardPoints;
-
-    public VIPAccount(String ID, String name, String address, String phone, String username, String password) {
-        super(ID, name, address, phone, username, password);
-        this.rewardPoints = 0;
-    }
-
-    public void addRewardPoints(int points) {
-        this.rewardPoints += points;
-        if (this.rewardPoints >= 100) {
-            System.out.println("You have enough reward points to rent 1 item for free.");
-        }
-    }
-}
-
 class Rental {
     private String itemID;
     private int days;

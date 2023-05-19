@@ -20,4 +20,9 @@ public class RegularAccount extends Customer implements Serializable {
             // delete the current regular account
         }
     }
+    @Override
+    public String toString() {
+        return String.format("%s,%s,%s,%s,%s,%s",
+                getID(), getName(), getAddress(), getPhone(), getUsername(), getPassword());
+    }
 }

@@ -16,4 +16,9 @@ public class VIPAccount extends Customer implements Serializable {
             System.out.println("You have enough reward points to rent 1 item for free.");
         }
     }
+    @Override
+    public String toString() {
+        return String.format("%s,%s,%s,%s,%s,%s",
+                getID(), getName(), getAddress(), getPhone(), getUsername(), getPassword());
+    }
 }

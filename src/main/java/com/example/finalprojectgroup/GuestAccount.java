@@ -24,4 +24,9 @@ public class GuestAccount extends Customer implements Serializable {
             }
         }
     }
+    @Override
+    public String toString() {
+        return String.format("%s,%s,%s,%s,%s,%s",
+                getID(), getName(), getAddress(), getPhone(), getUsername(), getPassword());
+    }
 }

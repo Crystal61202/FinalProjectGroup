@@ -1,17 +1,14 @@
 package com.example.finalprojectgroup;
-
 import java.util.ArrayList;
-import java.util.List;
 
-public abstract class Customer {
-    protected static String ID;
+public class Customer {
+    private String ID;
     private String name;
     private String address;
     private String phone;
     private ArrayList<Rental> rentals;
     private String username;
     private String password;
-    private List<Customer> customers;
 
     public Customer(String ID, String name, String address, String phone, String username, String password) {
         if (!isValidID(ID)) {
@@ -24,7 +21,7 @@ public abstract class Customer {
         this.rentals = new ArrayList<>();
         this.username = username;
         this.password = password;
-        customers = new ArrayList<>();
+
     }
 
     public String getID() {
@@ -90,13 +87,23 @@ public abstract class Customer {
     public static boolean isValidID(String ID) {
         return ID.matches("^C\\d{3}$");
     }
+
+    public void setAccountType(String selectedCustomer) {
+    }
+
+
+    public String getID(String ID) {
+        return ID;
+    }
 }
 
-class Rental {
+class Rental{
     private String itemID;
     private int days;
 
+
     public Rental(String itemID, int days) {
+
         this.itemID = itemID;
         this.days = days;
     }
@@ -107,5 +114,27 @@ class Rental {
 
     public int getDays() {
         return days;
+    }
+
+
+}
+class CustomerList extends Customer{
+
+    private ArrayList<Customer> customers;
+
+    public CustomerList(String ID, String name, String address, String phone, String username, String password, String itemID, int days) {
+        super(ID, name, address, phone, username, password);
+        customers = new ArrayList<>();
+    }
+
+    public void addCustomer(Customer customer) {
+        customers.add(customer);
+    }
+
+    public ArrayList<Customer> getCustomers() {
+        return customers;
+    }
+    public String getID(String ID) {
+        return ID;
     }
 }

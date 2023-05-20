@@ -1,11 +1,14 @@
+package com.example.finalprojectgroup;
+
+import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-public class CustomerGUI extends Application {
+import java.util.ArrayList;
 
-    private Controller customerList;
+public class CustomerGUI extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -14,13 +17,11 @@ public class CustomerGUI extends Application {
 
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
-        primaryStage.setTitle("Rental App");
+        primaryStage.setTitle("Customer page");
         primaryStage.show();
     }
 
-
     public static void main(String[] args) {
         launch(args);
-
     }
 }

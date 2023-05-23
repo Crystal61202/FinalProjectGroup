@@ -1,48 +1,53 @@
 
 package com.example.finalprojectgroup;
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
 public class CustomerDatabase {
+    public static void addRecord(String filePath, Customer cus) {
+    ArrayList<Customer> existingRecords = getRecord(filePath); // Load existing records
 
-    private static final String CUSTOMER_DATABASE_FILE_PATH = "customer_database.txt";
+    // Add the new record to the existing records
+    existingRecords.add(cus);
 
-    public static void addCustomer(String CUSTOMER_DATABASE_FILE_PATH, Customer customer) {
-        ArrayList<Customer> existingCustomers = getCustomers(CUSTOMER_DATABASE_FILE_PATH); // Load existing customers
+    // Remove duplicates from the list
+    Set<Customer> uniqueRecords = new HashSet<>(existingRecords);
+    existingRecords = new ArrayList<>(uniqueRecords);
 
-        // Add the new customer to the existing customers
-        existingCustomers.add(customer);
-
-        // Remove duplicates from the list
-        Set<Customer> uniqueCustomers = new HashSet<>(existingCustomers);
-        existingCustomers = new ArrayList<>(uniqueCustomers);
-
-        try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(CUSTOMER_DATABASE_FILE_PATH))) {
-            for (Customer existingCustomer : existingCustomers) {
-                out.writeObject(existingCustomer); // Write all unique customers back to the file
-            }
-            System.out.println("Customer added successfully.");
-        } catch (IOException e) {
-            System.out.println("Error occurred while writing to the database file: " + e.getMessage());
+    try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(filePath))) {
+        for (Customer existingRecord : existingRecords) {
+            if (existingRecord instanceof GuestAccount)
+                out.writeObject("Guest");
+            else if (existingRecord instanceof RegularAccount)
+                out.writeObject("Regular");
+            else if (existingRecord instanceof VIPAccount)
+                out.writeObject("VIP");
+            out.writeObject(existingRecord); // Write all unique records back to the file
+        }
+    } catch (IOException e) {
+        System.out.println("Error occurred while writing to the database file: " + e.getMessage());
         }
     }
-
-
-    public static ArrayList<Customer> getCustomers(String FilePath ) {
+    public static ArrayList<Customer> getRecord(String filePath) {
         ArrayList<Customer> list = new ArrayList<>();
-        Set<String> customerIds = new HashSet<>();
 
-        try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(CUSTOMER_DATABASE_FILE_PATH))) {
+        try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(filePath))) {
             while (true) {
                 try {
-                    Customer obj = (Customer) in.readObject();
-
-                    if (!customerIds.contains(obj.getID())) {
+                    String accountType = (String) in.readObject();
+                    if (accountType.equals("Guest")){
+                        GuestAccount obj = (GuestAccount) in.readObject();
                         list.add(obj);
-                        customerIds.add(obj.getID());
+                    }
+                    if (accountType.equals("Regular")){
+                        RegularAccount obj = (RegularAccount) in.readObject();
+                        list.add(obj);
+                    }
+                    if (accountType.equals("VIP")){
+                        VIPAccount obj = (VIPAccount) in.readObject();
+                        list.add(obj);
                     }
                 } catch (EOFException e) {
                     break;
@@ -53,36 +58,79 @@ public class CustomerDatabase {
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
-
         return list;
     }
+    public static void deleteAllCustomers() {
+        String filePath = "src/main/resources/com/example/data/customer.txt";
+        ArrayList<Customer> emptyList = new ArrayList<>();
 
-    public static void removeCustomer(String customerID) {
-        ArrayList<Customer> existingCustomers = getCustomers(CUSTOMER_DATABASE_FILE_PATH); // Load existing customers
-
-        // Find the customer with the specified ID
-        int index = -1;
-        for (int i = 0; i < existingCustomers.size(); i++) {
-            if (existingCustomers.get(i).getID().equals(customerID)) {
-                index = i;
-                break;
+        try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(filePath))) {
+            for (Customer obj : emptyList) {
+                out.writeObject(obj);
             }
-        }
-
-        // If the customer was found, remove it from the list
-        if (index != -1) {
-            existingCustomers.remove(index);
-        }
-
-        // Write the updated list to the database file
-        try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(CUSTOMER_DATABASE_FILE_PATH))) {
-            for (Customer existingCustomer : existingCustomers) {
-                out.writeObject(existingCustomer);
-            }
-            System.out.println("Customer removed successfully.");
         } catch (IOException e) {
-            System.out.println("Error occurred while writing to the database file: " + e.getMessage());
+            System.out.println("Error occurred while deleting cuss from the database file: " + e.getMessage());
+        }
+    }
+    public static void saveID(Customer cus){
+        String ID = cus.getID();
+        String extractedPart = ID.substring(1, 4);
+        int IDindex = Integer.parseInt(extractedPart);
+        try {
+            FileWriter writer = new FileWriter("src/main/resources/com/example/data/deletedCustomerID.txt",true);
+            writer.write(String.valueOf(IDindex));
+            writer.write("\n");
+            writer.close();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+    public static Integer replaceID() {
+        ArrayList<String> idList = new ArrayList<>();
+        String line = null;
+
+        try {
+            FileReader reader = new FileReader("src/main/resources/com/example/data/deletedCustomerID.txt");
+            BufferedReader bufferedReader = new BufferedReader(reader);
+
+            while ((line = bufferedReader.readLine()) != null) {
+                idList.add(line);
+            }
+
+            bufferedReader.close();
+            reader.close();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+
+        if (idList.isEmpty()||(idList.get(0).equals(""))) {
+            return null;
+        } else {
+            try {
+                return Integer.parseInt(reSaveId(idList));
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
+                return null;
+            }
+        }
+    }
+    public static String reSaveId(ArrayList<String> idList) {
+        if (idList.isEmpty()) {
+            return null;
+        } else {
+            String idIndex = idList.get(0);
+            idList.remove(0);
+            try {
+                FileWriter writer = new FileWriter("src/main/resources/com/example/data/deletedCustomerID.txt");
+                for (String s : idList) {
+                    writer.write(s);
+                    writer.write("\n");
+                }
+                writer.close();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+            return idIndex;
         }
     }
 }
-

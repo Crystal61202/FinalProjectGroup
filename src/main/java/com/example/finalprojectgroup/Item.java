@@ -8,8 +8,9 @@ public abstract class Item implements java.io.Serializable {
     private int numberOfCopies;
     private double rentalFee;
     private String ID, title, rentType, loanType, rentalStatus;
-    private static int trackingId = ItemDatabase.getRecord("src/main/resources/com/example/data/item.txt").size();
+    private static int trackingId;
     private int year;
+    private String genre;
 
     // Contructor for Item
     // year to make ID,
@@ -68,9 +69,18 @@ public abstract class Item implements java.io.Serializable {
     public void setID(){
         this.ID = formatID();
     }
-
+    public void setIDmanual(String ID){
+        this.ID = ID;
+    }
     private String formatID(){
-        trackingId = ItemDatabase.getRecord("src/main/resources/com/example/data/item.txt").size()+1;
+        Integer pendingID = (ItemDatabase.replaceID());
+        if(pendingID != null){
+            trackingId = pendingID;
+            System.out.println(pendingID);
+            return String.format("I"+"%03d"+"-"+getYear(),trackingId);
+        } else{
+            trackingId = ItemDatabase.getRecord().size() + 1;
+        }
         return String.format("I"+"%03d"+"-"+getYear(),trackingId);
     }
 
@@ -79,9 +89,10 @@ public abstract class Item implements java.io.Serializable {
     }
 
     public void setNumberOfCopies(int numberOfCopies) {
-        this.numberOfCopies = numberOfCopies;
-        setRentalStatus();
-    }
+            this.rentType = rentType;
+            this.numberOfCopies = numberOfCopies;
+            setRentalStatus();
+        }
 
     public void setRentalFee(double rentalFee) {
         this.rentalFee = rentalFee;
@@ -112,5 +123,125 @@ public abstract class Item implements java.io.Serializable {
         this.title = title;
     }
 
+    public String getGenre() {
+        return genre;
+    }
+
+    public static class VideoGame extends Item implements java.io.Serializable {
+        String genre = "";
+
+        public VideoGame(){
+        }
+        public VideoGame(Item item){
+            setYear(item.getYear());
+            setTitle(item.getTitle());
+            setRentType(item.getRentType());
+            setLoanType(item.getLoanType());
+            setNumberOfCopies(item.getNumberOfCopies());
+            setRentalFee(item.getRentalFee());
+            setIDmanual(item.getID());
+        }
+        public VideoGame(Integer year, String title, String rentType, String loanType, Integer numberOfCopies, double rentalFee) {
+            super(year, title, rentType, loanType, numberOfCopies, rentalFee);
+        }
+
+        public String getGenre() {
+            return genre;
+        }
+
+        public void setGenre(String genre) {
+            this.genre = genre;
+        }
+
+        @Override
+        public String toString() {
+            return String.format("%s,%s,%s,%s,%d,%.2f,%s",
+                    getID(), getTitle(), getRentType(), getLoanType(), getNumberOfCopies(), getRentalFee(), getRentalStatus());
+        }
+
+
+    }
+
+    public static class DVD extends Item implements java.io.Serializable {
+        private String genre;
+
+        public DVD(){
+        }
+        public DVD (Item item){
+            setYear(item.getYear());
+            setTitle(item.getTitle());
+            setRentType(item.getRentType());
+            setLoanType(item.getLoanType());
+            setNumberOfCopies(item.getNumberOfCopies());
+            setRentalFee(item.getRentalFee());
+            setIDmanual(item.getID());
+            setGenre(item.getGenre());
+        }
+
+        public DVD(Integer year, String title, String rentType, String loanType, Integer numberOfCopies, double rentalFee, String genre) {
+            super(year, title, rentType, loanType, numberOfCopies, rentalFee);
+            setGenre(genre);
+        }
+
+        public String getGenre() {
+            return genre;
+        }
+
+        public void setGenre(String genre) {
+            String[] availableGenre = {"Action", "Horror", "Drama", "Comedy"};
+            if (Arrays.asList(availableGenre).contains(genre)) {
+                this.genre = genre;
+            } else {
+                throw new IllegalArgumentException("Genre is not valid, 4 available genres are Action, Horror, Drama, Comedy ");
+            }
+        }
+
+        @Override
+        public String toString() {
+            return String.format("%s,%s,%s,%s,%d,%.2f,%s,%s",
+                    getID(), getTitle(), getRentType(), getLoanType(), getNumberOfCopies(), getRentalFee(), getRentalStatus(), getGenre());
+        }
+    }
+
+    public static class OldMovieRecord extends Item implements java.io.Serializable {
+        private String genre;
+
+        public OldMovieRecord(){
+        }
+        public OldMovieRecord (Item item){
+            setYear(item.getYear());
+            setTitle(item.getTitle());
+            setRentType(item.getRentType());
+            setLoanType(item.getLoanType());
+            setNumberOfCopies(item.getNumberOfCopies());
+            setRentalFee(item.getRentalFee());
+            setIDmanual(item.getID());
+            setGenre(item.getGenre());
+        }
+
+        public OldMovieRecord(Integer year, String title, String rentType, String loanType, Integer numberOfCopies, double rentalFee, String genre) {
+            super(year, title, rentType, loanType, numberOfCopies, rentalFee);
+            setGenre(genre);
+        }
+
+        public String getGenre() {
+            return genre;
+        }
+
+        public void setGenre(String genre) {
+            String[] availableGenre = {"Action", "Horror", "Drama", "Comedy"};
+            if (Arrays.asList(availableGenre).contains(genre)) {
+                this.genre = genre;
+            } else {
+                throw new IllegalArgumentException("Genre is not valid, 4 available genres are Action, Horror, Drama, Comedy ");
+            }
+        }
+
+        @Override
+        public String toString() {
+            return String.format("%s,%s,%s,%s,%d,%.2f,%s,%s",
+                    getID(), getTitle(), getRentType(), getLoanType(), getNumberOfCopies(), getRentalFee(), getRentalStatus(), getGenre());
+        }
+    }
 }
 

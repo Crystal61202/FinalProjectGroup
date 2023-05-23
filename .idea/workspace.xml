@@ -4,38 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f1ebabd-5a29-4220-8f81-de52fd9f7ffe" name="Changes" comment="thêm tính năng remove item">
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_18_2023_9_45_AM_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_18_2023_9_45_AM_[Changes]1/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_18_2023_9_45_AM__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_18_2023_9_45_AM__Changes_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/item.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/data/deletedItemID.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_15_2023_11_06_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_15_2023_11_06_PM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_15_23,_10_58_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_15_23,_10_59_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_15_23,_11_01_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_15_23__10_58_PM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_15_23__10_59_PM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_15_23__11_01_PM__Changes_.xml" beforeDir="false" />
+    <list default="true" id="0f1ebabd-5a29-4220-8f81-de52fd9f7ffe" name="Changes" comment="final version 1.0">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/Controller.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/CustomerDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/CustomerDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/CustomerGUI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/CustomerGUIController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/DVD.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/ItemDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/ItemDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/OldMovieRecord.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/RentalApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/RentalApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/VideoGame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/AdminCustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/AdminCustomerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/data/customer.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/data/customer.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/data/item.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/data/item.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/finalprojectgroup/customer_gui.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/finalprojectgroup/sample.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,6 +95,7 @@
       <workItem from="1684514354033" duration="228000" />
       <workItem from="1684568117280" duration="464000" />
       <workItem from="1684826192761" duration="158000" />
+      <workItem from="1684826362924" duration="4344000" />
     </task>
     <task id="LOCAL-00001" summary="Update HelloApplication.java">
       <created>1684166380718</created>
@@ -208,7 +181,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684394648203</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="final version 1.0">
+      <created>1684826562005</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1684826562006</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -264,6 +244,18 @@
     <MESSAGE value="có thể tạo bảng cho item từ file item.txt" />
     <MESSAGE value="thêm GUI để show data, add, remove" />
     <MESSAGE value="thêm tính năng remove item" />
-    <option name="LAST_COMMIT_MESSAGE" value="thêm tính năng remove item" />
+    <MESSAGE value="final version 1.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="final version 1.0" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/LoginPageController.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

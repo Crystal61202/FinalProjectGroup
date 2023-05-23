@@ -174,6 +174,7 @@ public class AdminCustomerController implements Initializable {
         cus.SetPhone(PhoneText.getText());
         cus.SetUsername(UsernameText.getText());
         cus.SetPassword(PasswordText.getText());
+        cus.SetRentals(new ArrayList<Item>());
     }
     public void add() {
         String type = AccTypeBox.getValue();

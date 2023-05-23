@@ -91,7 +91,7 @@
       <workItem from="1684514354033" duration="228000" />
       <workItem from="1684568117280" duration="464000" />
       <workItem from="1684826192761" duration="158000" />
-      <workItem from="1684826362924" duration="4780000" />
+      <workItem from="1684826362924" duration="5069000" />
     </task>
     <task id="LOCAL-00001" summary="Update HelloApplication.java">
       <created>1684166380718</created>
@@ -191,7 +191,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684832051526</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="fix null rentals when creating a new account">
+      <created>1684841876488</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1684841876488</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

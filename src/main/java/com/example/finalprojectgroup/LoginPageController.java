@@ -30,7 +30,7 @@ public class LoginPageController {
     ArrayList<Customer> cusList= CustomerDatabase.getRecord("src/main/resources/com/example/data/customer.txt");
     public void Login(ActionEvent e) throws IOException {
 
-        if((Objects.equals(Username.getText(), "ADMIN")) && (Objects.equals(Password.getText(), "qwerty"))) {
+        if((Objects.equals(Username.getText(), "ADMIN")) && (Objects.equals(Password.getText(), "ADMIN"))) {
             Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("AdminItem.fxml"));
             AnchorPane itemPage = loader.load();

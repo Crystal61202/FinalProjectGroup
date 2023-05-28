@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f1ebabd-5a29-4220-8f81-de52fd9f7ffe" name="Changes" comment="fix null rentals when creating a new account">
+    <list default="true" id="0f1ebabd-5a29-4220-8f81-de52fd9f7ffe" name="Changes" comment=".">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/README" beforeDir="false" afterPath="$PROJECT_DIR$/doc/README" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/data/customer.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/data/customer.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/LoginPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/LoginPageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/data/deletedItemID.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/data/deletedItemID.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/data/item.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/data/item.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/finalprojectgroup/AdminCustomer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/finalprojectgroup/AdminCustomer.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,7 +208,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684841876488</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary=".">
+      <created>1685185933901</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1685185933901</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -266,17 +274,7 @@
     <MESSAGE value="final version 1.0" />
     <MESSAGE value="fix null rentals when creating a new account" />
     <MESSAGE value="UML class diagram" />
-    <option name="LAST_COMMIT_MESSAGE" value="UML class diagram" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup/LoginPageController.java</url>
-          <line>47</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="." />
+    <option name="LAST_COMMIT_MESSAGE" value="." />
   </component>
 </project>
